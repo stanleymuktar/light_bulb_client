@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Lightbulb</title>
+        <link rel="icon" type="image/x-icon" href="images/bulb-dark.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&amp;display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <div class="alert connecting" id="notification">
+                <img class="alert-img" id="alert-img" src="./images/loading.gif">
+                <span class="close-btn" id="close-btn" onclick="closeNotification()">X</span>
+                <span class="alert-data" id="alert-data">Connecting...</span>
+            </div>
+            <div class="home-screen">
+                <img src="images/bulb.png" alt="Bulb" onclick="showNotification()">
+                <div class="form-group">
+                    <p>Light Status</p>
+                    <input type="checkbox" id="light-status" onclick="lightStatusUpdated()">
+                    <label for="light-status" class="light-status-toggle"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="intensity">Lamp Intensity</label>
+                    <input type="range" name="intensity" id="intensity" onchange="intensityUpdated()">
+                </div>
+
+                <div class="form-group">
+                    <label>Lamp Color</label>
+                    <input type="color" id="color" onchange="colorUpdated()">
+                </div>
+            </div>
+            <div class="color-picker-screen"></div>
+        </div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
+<!-- 
+npm install aws-sdk
+npm install aws-iot-device-sdk
+
+download browserify to local directory
+npm install browserify -g
+
+download uglifyjs to local directory
+npm install uglify-js -g
+
+browserify index.js -o bundle.js
+gzip < bundle.js | wc -c
+uglifyjs bundle.js -o bundle.js
+gzip <bundle.js | wc -c
+-->

@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+#app {
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.home-screen {
+    width: 375px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.show {
+    opacity: 100%;
+    z-index: 2;
+}
+
+.form-group {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+input {
+    width: 100%
+}
+
+.home-screen img {
+    width: 260px;
+    margin: 0 auto;
+}
+
+.home-screen {
+    display: flex;
+    animation: show 2s forwards step-end;
+    flex-direction: column;
+}
+
+#light-status {
+    position: relative;
+    display: none;
+}
+
+#light-status + .light-status-toggle {
+    display: block;
+    width: 150px;
+    height: 70px;
+    margin: 0 auto;
+    transition: all .2s;
+    background-color: #942D26;
+    border-radius: 50rem;
+    position: relative;
+    cursor: pointer;
+}
+
+#light-status + .light-status-toggle:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    transition: all .2s;
+    left: 5px;
+    top: 5px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#light-status:checked + .light-status-toggle {
+    background-color: #269431;
+}
+
+#light-status:checked + .light-status-toggle:before {
+    left: 85px;
+    top: 5px;
+}
+
+p, label {
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding-top: 6rem;
+    margin-bottom: 3rem;
+}
+ 
+.alert {
+    position: fixed;
+    width: 300px;
+    right: 50px;
+    top: 25%;
+    font-size: 32px;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}
+    
+.alert.connecting {
+    color: #2D4E00;
+    background-color: #C9EA9C; 
+    border-style: solid;
+    border-color: #2D4E00;
+}
+    
+.alert.connected {
+    background-color: #008B00; 
+    color:white;
+    border-style: solid;
+}
+
+.alert-img {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.alert-data {
+    display: inline-block;
+}
+    
+.close-btn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.close-btn:hover {
+color: black;
+}
